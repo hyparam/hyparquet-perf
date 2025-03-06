@@ -1,5 +1,5 @@
 import { createWriteStream, promises as fs } from 'fs'
-import { asyncBufferFromFile } from 'hyparquet'
+import { asyncBufferFromFile } from './asyncBuffer.js'
 import { pipeline } from 'stream/promises'
 import packageJson from './package.json' with { type: 'json' }
 import { tests } from './tests.js'
@@ -17,22 +17,26 @@ async function runTests() {
       const start = performance.now()
 
       // Run tests
-      await runTest(metered)
+      try {
+        await runTest(metered)
 
-      const ms = performance.now() - start
-      let stat = await fs.stat(filename).catch(() => undefined)
-
-      const str = JSON.stringify({
-        name,
-        version: packageJson.devDependencies.hyparquet,
-        ms,
-        readBytes: metered.readBytes,
-        fileSize: stat.size,
-        date: new Date().toISOString(),
-      })
-      console.log(str)
-      // Also append to perf.jsonl
-      await fs.appendFile('perf.jsonl', str + '\n')
+        const ms = performance.now() - start
+        let stat = await fs.stat(filename).catch(() => undefined)
+  
+        const str = JSON.stringify({
+          name,
+          version: packageJson.devDependencies.hyparquet,
+          ms,
+          readBytes: metered.readBytes,
+          fileSize: stat.size,
+          date: new Date().toISOString(),
+        })
+        console.log(str)
+        // Also append to perf.jsonl
+        await fs.appendFile('perf.jsonl', str + '\n')
+      } catch (err) {
+        console.error(`Error running test ${name}: ${err}`)
+      }
     }
   }
 }
