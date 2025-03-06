@@ -1,8 +1,8 @@
 import { createWriteStream, promises as fs } from 'fs'
-import { asyncBufferFromFile, parquetQuery, parquetRead } from 'hyparquet'
-import { compressors } from 'hyparquet-compressors'
+import { asyncBufferFromFile } from 'hyparquet'
 import { pipeline } from 'stream/promises'
 import packageJson from './package.json' with { type: 'json' }
+import { tests } from './tests.js'
 
 const url = 'https://s3.hyperparam.app/tpch-lineitem.parquet'
 const filename = 'data/tpch-lineitem.parquet'
@@ -24,11 +24,11 @@ async function runTests() {
 
       const str = JSON.stringify({
         name,
-        date: new Date().toISOString(),
         version: packageJson.devDependencies.hyparquet,
-        fileSize: stat.size,
-        readBytes: metered.readBytes,
         ms,
+        readBytes: metered.readBytes,
+        fileSize: stat.size,
+        date: new Date().toISOString(),
       })
       console.log(str)
       // Also append to perf.jsonl
@@ -36,57 +36,6 @@ async function runTests() {
     }
   }
 }
-
-const tests = [
-  {
-    name: 'read-all-data',
-    async runTest(file) {
-      await parquetRead({ file, compressors })
-    },
-  },
-  {
-    name: 'read-int-column',
-    async runTest(file) {
-      await parquetRead({ file, compressors, columns: ['l_quantity'] })
-    },
-  },
-  {
-    name: 'read-float-column',
-    async runTest(file) {
-      await parquetRead({ file, compressors, columns: ['l_discount'] })
-    },
-  },
-  {
-    name: 'read-date-column',
-    async runTest(file) {
-      await parquetRead({ file, compressors, columns: ['l_shipdate'] })
-    },
-  },
-  {
-    name: 'read-string-column',
-    async runTest(file) {
-      await parquetRead({ file, compressors, columns: ['l_comment'] })
-    },
-  },
-  {
-    name: 'read-with-row-limits',
-    async runTest(file) {
-      await parquetRead({ file, compressors, rowStart: 2_000_000, rowEnd: 3_000_000 })
-    },
-  },
-  {
-    name: 'query-with-sort',
-    async runTest(file) {
-      await parquetRead({ file, compressors, sort: 'l_orderkey', rowEnd: 100 })
-    },
-  },
-  {
-    name: 'query-with-filter',
-    async runTest(file) {
-      await parquetQuery({ file, compressors, filter: 'l_quantity > 20' })
-    },
-  },
-]
 
 function meteredAsyncBuffer(file) {
   let readBytes = 0

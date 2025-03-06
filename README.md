@@ -2,6 +2,7 @@
 
 To run performance suite:
 
-```
+```sh
+npm install
 node index.js
 ```
