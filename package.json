@@ -1,5 +1,8 @@
 {
   "name": "hyparquet-perf",
+  "author": "Hyperparam",
+  "homepage": "https://hyperparam.app",
+  "license": "MIT",
   "scripts": {
     "start": "node index.js"
   },
