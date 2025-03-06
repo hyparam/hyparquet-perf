@@ -1,27 +1,100 @@
 import { createWriteStream, promises as fs } from 'fs'
-import { asyncBufferFromFile, parquetRead } from 'hyparquet'
+import { get } from 'http'
+import { asyncBufferFromFile, parquetQuery, parquetRead } from 'hyparquet'
 import { compressors } from 'hyparquet-compressors'
 import { pipeline } from 'stream/promises'
 
-async function runTest() {
-  getTestFile()
-  const file = await asyncBufferFromFile(filename)
-  const iterations = 10
-  const start = performance.now()
-
-  // read parquet file
-  await parquetRead({
-    file,
-    compressors,
-  })
-
-  const ms = performance.now() - start
-  let stat = await fs.stat(filename).catch(() => undefined)
-  console.log(`parsed ${stat.size.toLocaleString()} bytes in ${ms.toFixed(0)} ms`)
-}
-
 const url = 'https://s3.hyperparam.app/tpch-lineitem.parquet'
 const filename = 'data/tpch-lineitem.parquet'
+getTestFile()
+const file = await asyncBufferFromFile(filename)
+const iterations = 1
+
+async function runTests() {
+  for (const { name, runTest } of tests) {
+    for (let i = 0; i < iterations; i++) {
+      const metered = meteredAsyncBuffer(file)
+      const start = performance.now()
+
+      // Run tests
+      await runTest(metered)
+
+      const ms = performance.now() - start
+      let stat = await fs.stat(filename).catch(() => undefined)
+      console.log(JSON.stringify({
+        name,
+        fileSize: stat.size,
+        readBytes: metered.readBytes,
+        ms,
+      }))
+    }
+  }
+}
+
+const tests = [
+  {
+    name: 'read-all-data',
+    async runTest(file) {
+      await parquetRead({ file, compressors })
+    },
+  },
+  {
+    name: 'read-int-column',
+    async runTest(file) {
+      await parquetRead({ file, compressors, columns: ['l_quantity'] })
+    },
+  },
+  {
+    name: 'read-float-column',
+    async runTest(file) {
+      await parquetRead({ file, compressors, columns: ['l_discount'] })
+    },
+  },
+  {
+    name: 'read-date-column',
+    async runTest(file) {
+      await parquetRead({ file, compressors, columns: ['l_shipdate'] })
+    },
+  },
+  {
+    name: 'read-string-column',
+    async runTest(file) {
+      await parquetRead({ file, compressors, columns: ['l_comment'] })
+    },
+  },
+  {
+    name: 'read-with-row-limits',
+    async runTest(file) {
+      await parquetRead({ file, compressors, rowStart: 2_000_000, rowEnd: 3_000_000 })
+    },
+  },
+  {
+    name: 'query-with-sort',
+    async runTest(file) {
+      await parquetRead({ file, compressors, sort: 'l_orderkey', rowEnd: 100 })
+    },
+  },
+  {
+    name: 'query-with-filter',
+    async runTest(file) {
+      await parquetQuery({ file, compressors, filter: 'l_quantity > 20' })
+    },
+  },
+]
+
+function meteredAsyncBuffer(file) {
+  let readBytes = 0
+  return {
+    byteLength: file.byteLength,
+    slice: (start, end = file.byteLength) => {
+      readBytes += end - start
+      return file.slice(start, end)
+    },
+    get readBytes() {
+      return readBytes
+    },
+  }
+}
 
 async function getTestFile() {
   // download test parquet file if needed
@@ -39,4 +112,4 @@ async function getTestFile() {
   }
 }
 
-runTest()
+runTests()
