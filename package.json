@@ -4,10 +4,12 @@
   "homepage": "https://hyperparam.app",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "chart": "http-server -o"
   },
   "type": "module",
   "devDependencies": {
+    "http-server": "14.1.1",
     "hyparquet": "1.8.6",
     "hyparquet-compressors": "1.0.0"
   }
