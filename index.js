@@ -1,11 +1,23 @@
 import { createWriteStream, promises as fs } from 'fs'
-import { parquetRead } from 'hyparquet'
+import { asyncBufferFromFile, parquetRead } from 'hyparquet'
+import { compressors } from 'hyparquet-compressors'
 import { pipeline } from 'stream/promises'
 
-function runPerfTest() {
+async function runTest() {
   getTestFile()
+  const file = await asyncBufferFromFile(filename)
   const iterations = 10
   const start = performance.now()
+
+  // read parquet file
+  await parquetRead({
+    file,
+    compressors,
+  })
+
+  const ms = performance.now() - start
+  let stat = await fs.stat(filename).catch(() => undefined)
+  console.log(`parsed ${stat.size.toLocaleString()} bytes in ${ms.toFixed(0)} ms`)
 }
 
 const url = 'https://s3.hyperparam.app/tpch-lineitem.parquet'
@@ -27,4 +39,4 @@ async function getTestFile() {
   }
 }
 
-runPerfTest()
+runTest()
