@@ -1,0 +1,10 @@
+{
+  "name": "hyparquet-perf",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "hyparquet": "1.8.6"
+  }
+}
