@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "type": "module",
-  "dependencies": {
+  "devDependencies": {
     "hyparquet": "1.8.6",
     "hyparquet-compressors": "1.0.0"
   }

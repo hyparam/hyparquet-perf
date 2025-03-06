@@ -1,12 +1,12 @@
 import { createWriteStream, promises as fs } from 'fs'
-import { get } from 'http'
 import { asyncBufferFromFile, parquetQuery, parquetRead } from 'hyparquet'
 import { compressors } from 'hyparquet-compressors'
 import { pipeline } from 'stream/promises'
+import packageJson from './package.json' with { type: 'json' }
 
 const url = 'https://s3.hyperparam.app/tpch-lineitem.parquet'
 const filename = 'data/tpch-lineitem.parquet'
-getTestFile()
+await getTestFile()
 const file = await asyncBufferFromFile(filename)
 const iterations = 1
 
@@ -21,12 +21,18 @@ async function runTests() {
 
       const ms = performance.now() - start
       let stat = await fs.stat(filename).catch(() => undefined)
-      console.log(JSON.stringify({
+
+      const str = JSON.stringify({
         name,
+        date: new Date().toISOString(),
+        version: packageJson.devDependencies.hyparquet,
         fileSize: stat.size,
         readBytes: metered.readBytes,
         ms,
-      }))
+      })
+      console.log(str)
+      // Also append to perf.jsonl
+      await fs.appendFile('perf.jsonl', str + '\n')
     }
   }
 }
