@@ -39,8 +39,9 @@ async function run() {
   const versionsData = await fetch('https://registry.npmjs.org/hyparquet')
     .then(res => res.json())
 
-  // Extract the version numbers and reverse() for the newest first (or however you want)
+  // Extract the version numbers and reverse() for the newest first
   const versions = Object.keys(versionsData.versions).reverse()
+    .filter(v => v !== '0.7.3') // 0.7.3 sucked
 
   // Remove perf.jsonl
   await fs.unlink('perf.jsonl').catch(() => {})

@@ -6,8 +6,8 @@ fetch('./perf.jsonl')
     const lines = text.trim().split('\n')
     const rawData = lines.map(JSON.parse)
     
-    // Extract unique versions (sorted)
-    const versions = [...new Set(rawData.map(d => d.version))].sort()
+    // Extract unique versions
+    const versions = [...new Set(rawData.map(d => d.version))].reverse()
 
     // Extract unique test names
     const testNames = [...new Set(rawData.map(d => d.name))]

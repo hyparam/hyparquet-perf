@@ -4,7 +4,8 @@
   "homepage": "https://hyperparam.app",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "all-versions": "node versions.js",
+    "current-version": "node index.js",
     "chart": "http-server -o"
   },
   "type": "module",
