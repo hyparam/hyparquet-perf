@@ -41,7 +41,7 @@ export const tests = [
   {
     name: 'query-with-sort',
     async runTest(file) {
-      await hyparquet.parquetRead({ file, compressors, sort: 'l_orderkey', rowEnd: 100 })
+      await hyparquet.parquetRead({ file, compressors, sort: 'l_extendedprice', rowEnd: 10000 })
     },
   },
   {
