@@ -3,12 +3,6 @@ import { compressors } from 'hyparquet-compressors'
 
 export const tests = [
   {
-    name: 'read-all-data',
-    async runTest(file) {
-      await hyparquet.parquetRead({ file, compressors })
-    },
-  },
-  {
     name: 'read-int-column',
     async runTest(file) {
       await hyparquet.parquetRead({ file, compressors, columns: ['l_quantity'] })
@@ -36,6 +30,12 @@ export const tests = [
     name: 'read-with-row-limits',
     async runTest(file) {
       await hyparquet.parquetRead({ file, compressors, rowStart: 2_000_000, rowEnd: 3_000_000 })
+    },
+  },
+  {
+    name: 'read-all-data',
+    async runTest(file) {
+      await hyparquet.parquetRead({ file, compressors })
     },
   },
   {

@@ -1,4 +1,3 @@
-
 // Fetch the perf.jsonl file in the same directory
 fetch('./perf.jsonl')
   .then((response) => response.text())
@@ -23,20 +22,21 @@ fetch('./perf.jsonl')
       lookup[name][version] = ms
     })
 
-    // Build datasets for Chart.js
-    const datasets = testNames.map(name => {
+    // Deterministic color function for the "rainbow" scale
+    function getDeterministicColor(index) {
+      const hue = index * (360 / 7)
+      return `hsl(${hue}, 70%, 50%)`
+    }
+
+    // Build datasets for Chart.js using deterministic colors
+    const datasets = testNames.map((name, index) => {
       return {
         label: name,
         data: versions.map(version => lookup[name][version] ?? null),
-        borderColor: getRandomColor(),
+        borderColor: getDeterministicColor(index),
         fill: false
       }
     })
-
-    // A helper function to generate random color for lines
-    function getRandomColor() {
-      return `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`
-    }
 
     // Render the chart
     const ctx = document.getElementById('benchmarkChart').getContext('2d')
