@@ -44,7 +44,7 @@ fetch('./perf.jsonl')
       type: 'line',
       data: {
         labels: versions,
-        datasets: datasets
+        datasets: datasets,
       },
       options: {
         responsive: true,
@@ -54,25 +54,25 @@ fetch('./perf.jsonl')
             type: 'logarithmic',
             title: {
               display: true,
-              text: 'Time (ms)'
-            }
+              text: 'Time (ms)',
+            },
           },
           x: {
             title: {
               display: true,
-              text: 'Version'
-            }
-          }
+              text: 'Version',
+            },
+          },
         },
         plugins: {
           title: {
             display: true,
-            text: 'Benchmark Results'
+            text: 'Benchmark Results',
           },
           legend: {
-            position: 'bottom'
-          }
-        }
+            position: 'bottom',
+          },
+        },
       }
     })
   })
