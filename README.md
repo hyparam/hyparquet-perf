@@ -1,8 +1,13 @@
 # Hyparquet Performance Suite
 
-To run performance suite:
+Performance testing suite for [hyparquet](https://github.com/hyparam/hyparquet).
+
+To run performance tests:
 
 ```sh
 npm install
-node index.js
+npm run all-versions
+npm run current-version
 ```
+
+It takes about 12 minutes on an M3 macbook to run benchmarks on all published versions of hyparquet.
