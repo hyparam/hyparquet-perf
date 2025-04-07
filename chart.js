@@ -24,7 +24,7 @@ fetch('./perf.jsonl')
 
     // Deterministic color function for the "rainbow" scale
     function getDeterministicColor(index) {
-      const hue = index * (360 / 7)
+      const hue = index * (360 / 10)
       return `hsl(${hue}, 70%, 50%)`
     }
 

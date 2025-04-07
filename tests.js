@@ -27,21 +27,38 @@ export const tests = [
     },
   },
   {
+    name: 'read-single-row',
+    async runTest(file) {
+      await hyparquet.parquetRead({
+        file,
+        compressors,
+        // near the end of the first rowgroup
+        rowStart: 190000,
+        rowEnd: 190001,
+      })
+    },
+  },
+  {
+    name: 'read-objects',
+    async runTest(file) {
+      await hyparquet.parquetReadObjects({ file, compressors, rowEnd: 300_000 })
+    },
+  },
+  {
     name: 'read-with-row-limits',
     async runTest(file) {
-      await hyparquet.parquetRead({ file, compressors, rowStart: 2_000_000, rowEnd: 3_000_000 })
+      await hyparquet.parquetRead({
+        file,
+        compressors,
+        rowStart: 2_200_000,
+        rowEnd: 2_600_000,
+      })
     },
   },
   {
     name: 'read-all-data',
     async runTest(file) {
       await hyparquet.parquetRead({ file, compressors })
-    },
-  },
-  {
-    name: 'read-objects',
-    async runTest(file) {
-      await hyparquet.parquetReadObjects({ file, compressors, rowEnd: 1_000_000 })
     },
   },
   {

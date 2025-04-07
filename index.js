@@ -4,8 +4,8 @@ import { pipeline } from 'stream/promises'
 import packageJson from './package.json' with { type: 'json' }
 import { tests } from './tests.js'
 
-const url = 'https://s3.hyperparam.app/tpch-lineitem.parquet'
-const filename = 'data/tpch-lineitem.parquet'
+const url = 'https://s3.hyperparam.app/tpch-lineitem-v2.parquet'
+const filename = 'data/tpch-lineitem-v2.parquet'
 await getTestFile()
 const file = await asyncBufferFromFile(filename)
 const iterations = 1

@@ -11,7 +11,7 @@
   "type": "module",
   "devDependencies": {
     "http-server": "14.1.1",
-    "hyparquet": "1.10.3",
+    "hyparquet": "1.10.4",
     "hyparquet-compressors": "1.1.1"
   }
 }

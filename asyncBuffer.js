@@ -1,3 +1,5 @@
+// These are copied here so we don't depend on them from hyparquet package
+
 /**
  * Construct an AsyncBuffer for a local file using node fs package.
  *
