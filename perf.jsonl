@@ -1,3 +1,13 @@
+{"name":"read-int-column","version":"^1.11.1","ms":144.425917,"readBytes":5050458,"fileSize":218670424,"date":"2025-04-10T00:58:59.605Z"}
+{"name":"read-float-column","version":"^1.11.1","ms":120.45770800000003,"readBytes":3543761,"fileSize":218670424,"date":"2025-04-10T00:58:59.729Z"}
+{"name":"read-date-column","version":"^1.11.1","ms":113.38912499999998,"readBytes":9853384,"fileSize":218670424,"date":"2025-04-10T00:58:59.843Z"}
+{"name":"read-string-column","version":"^1.11.1","ms":762.7663750000002,"readBytes":79736662,"fileSize":218670424,"date":"2025-04-10T00:59:00.606Z"}
+{"name":"read-single-row","version":"^1.11.1","ms":69.47204100000022,"readBytes":7810969,"fileSize":218670424,"date":"2025-04-10T00:59:00.676Z"}
+{"name":"read-objects","version":"^1.11.1","ms":234.52545800000007,"readBytes":15100475,"fileSize":218670424,"date":"2025-04-10T00:59:00.911Z"}
+{"name":"read-with-row-limits","version":"^1.11.1","ms":235.62345800000003,"readBytes":22382331,"fileSize":218670424,"date":"2025-04-10T00:59:01.147Z"}
+{"name":"read-all-data","version":"^1.11.1","ms":2839.3690419999994,"readBytes":219137869,"fileSize":218670424,"date":"2025-04-10T00:59:03.987Z"}
+{"name":"query-with-sort","version":"^1.11.1","ms":41.64000000000033,"readBytes":7810969,"fileSize":218670424,"date":"2025-04-10T00:59:04.030Z"}
+{"name":"query-with-filter","version":"^1.11.1","ms":12526.215166,"readBytes":219137869,"fileSize":218670424,"date":"2025-04-10T00:59:16.557Z"}
 {"name":"read-int-column","version":"^1.11.0","ms":144.764417,"readBytes":5050458,"fileSize":218670424,"date":"2025-04-08T04:40:47.214Z"}
 {"name":"read-float-column","version":"^1.11.0","ms":118.51933300000002,"readBytes":3543761,"fileSize":218670424,"date":"2025-04-08T04:40:47.336Z"}
 {"name":"read-date-column","version":"^1.11.0","ms":120.86600000000004,"readBytes":9853384,"fileSize":218670424,"date":"2025-04-08T04:40:47.457Z"}
