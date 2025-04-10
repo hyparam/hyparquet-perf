@@ -4,7 +4,7 @@ fetch('./perf.jsonl')
   .then((text) => {
     // Split file contents by newline and parse each line as JSON
     const lines = text.trim().split('\n')
-    const rawData = lines.map(JSON.parse)
+    const rawData = lines.map(line => JSON.parse(line))
     
     // Extract unique versions
     const versions = [...new Set(rawData.map(d => d.version))].reverse()
@@ -24,7 +24,7 @@ fetch('./perf.jsonl')
 
     // Deterministic color function for the "rainbow" scale
     function getDeterministicColor(index) {
-      const hue = index * (360 / 10)
+      const hue = index * (360 / testNames.length)
       return `hsl(${hue}, 70%, 50%)`
     }
 
@@ -76,6 +76,6 @@ fetch('./perf.jsonl')
       }
     })
   })
-  .catch((error) => {
+  .catch(error => {
     console.error('Error loading or parsing perf.jsonl:', error)
   })

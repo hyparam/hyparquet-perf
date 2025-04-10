@@ -54,7 +54,7 @@ async function run() {
 
     // Run your test script (streams stdout/stderr)
     try {
-      await streamCommand('node', ['index.js'])
+      await streamCommand('node', ['src/index.js'])
     } catch (err) {
       console.error(`Error running test for hyparquet@${version}:`, err)
     }

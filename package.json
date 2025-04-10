@@ -4,12 +4,13 @@
   "homepage": "https://hyperparam.app",
   "license": "MIT",
   "scripts": {
-    "all-versions": "node versions.js",
-    "current-version": "node index.js",
+    "all-versions": "node src/versions.js",
+    "current-version": "node src/index.js",
     "chart": "http-server -o"
   },
   "type": "module",
   "devDependencies": {
+    "@types/node": "22.14.0",
     "http-server": "14.1.1",
     "hyparquet": "1.11.1",
     "hyparquet-compressors": "1.1.1"

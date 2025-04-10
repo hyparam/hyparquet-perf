@@ -1,7 +1,7 @@
 import { createWriteStream, promises as fs } from 'fs'
 import { asyncBufferFromFile } from './asyncBuffer.js'
 import { pipeline } from 'stream/promises'
-import packageJson from './package.json' with { type: 'json' }
+import packageJson from '../package.json' with { type: 'json' }
 import { tests } from './tests.js'
 
 const url = 'https://s3.hyperparam.app/tpch-lineitem-v2.parquet'
