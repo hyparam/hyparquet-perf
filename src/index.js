@@ -28,6 +28,7 @@ async function runTests() {
           version: packageJson.devDependencies.hyparquet,
           ms,
           readBytes: metered.readBytes,
+          reads: metered.reads,
           fileSize: stat.size,
           date: new Date().toISOString(),
         })
@@ -42,15 +43,14 @@ async function runTests() {
 }
 
 function meteredAsyncBuffer(file) {
-  let readBytes = 0
   return {
+    readBytes: 0,
+    reads: 0,
     byteLength: file.byteLength,
-    slice: (start, end = file.byteLength) => {
-      readBytes += end - start
+    slice(start, end = file.byteLength) {
+      this.readBytes += end - start
+      this.reads++
       return file.slice(start, end)
-    },
-    get readBytes() {
-      return readBytes
     },
   }
 }

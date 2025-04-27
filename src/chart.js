@@ -29,14 +29,12 @@ fetch('./perf.jsonl')
     }
 
     // Build datasets for Chart.js using deterministic colors
-    const datasets = testNames.map((name, index) => {
-      return {
-        label: name,
-        data: versions.map(version => lookup[name][version] ?? null),
-        borderColor: getDeterministicColor(index),
-        fill: false
-      }
-    })
+    const datasets = testNames.map((name, index) => ({
+      label: name,
+      data: versions.map(version => lookup[name][version] ?? null),
+      borderColor: getDeterministicColor(index),
+      fill: false
+    }))
 
     // Render the chart
     const ctx = document.getElementById('benchmarkChart').getContext('2d')
