@@ -3,6 +3,7 @@
 /**
  * Construct an AsyncBuffer for a local file using node fs package.
  *
+ * @typedef {{ byteLength: number, slice(start: number, end: number): Promise<ArrayBuffer> }} AsyncBuffer
  * @param {string} filename
  * @returns {Promise<AsyncBuffer>}
  */
