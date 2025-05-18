@@ -10,8 +10,22 @@ await getTestFile()
 const file = await asyncBufferFromFile(filename)
 const iterations = 1
 
+const version = packageJson.devDependencies.hyparquet
+
 async function runTests() {
   for (const { name, runTest } of tests) {
+    // pre-1.7.0 ignored the filter parameter
+    if (name === 'query-with-filter') {
+      // if it looks like a version string, parse it "^1.7.0"
+      if (/^\^(\d+)\.(\d+)\.(\d+)$/.test(version)) {
+        const parts = version.slice(1).split('.')
+        const major = Number(parts[0])
+        const minor = Number(parts[1])
+        if (major < 1) continue
+        if (major === 1 && minor <= 7) continue
+      }
+    }
+
     for (let i = 0; i < iterations; i++) {
       const metered = meteredAsyncBuffer(file)
       const start = performance.now()
@@ -25,7 +39,7 @@ async function runTests() {
   
         const str = JSON.stringify({
           name,
-          version: packageJson.devDependencies.hyparquet,
+          version,
           ms,
           readBytes: metered.readBytes,
           reads: metered.reads,

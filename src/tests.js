@@ -75,7 +75,7 @@ export const tests = [
   {
     name: 'query-with-filter',
     async runTest(file) {
-      await hyparquet.parquetQuery({ file, compressors, filter: { $gt: { l_quantity: 20 } } })
+      await hyparquet.parquetQuery({ file, compressors, filter: { $gte: { l_quantity: 50 } }, rowEnd: 1000 })
     },
   },
   {
