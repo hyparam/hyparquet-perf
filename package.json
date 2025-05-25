@@ -12,7 +12,7 @@
   "devDependencies": {
     "@types/node": "22.15.19",
     "http-server": "14.1.1",
-    "hyparquet": "1.13.5",
+    "hyparquet": "1.13.6",
     "hyparquet-compressors": "1.1.1"
   }
 }
