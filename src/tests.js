@@ -81,7 +81,7 @@ export const tests = [
   {
     name: 'query-with-sort',
     async runTest(file) {
-      await hyparquet.parquetQuery({ file, compressors, orderBy: 'l_extendedprice', rowEnd: 30 })
+      await hyparquet.parquetQuery({ file, compressors, orderBy: 'l_extendedprice', rowEnd: 10 })
     },
   },
 ]
