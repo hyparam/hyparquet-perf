@@ -10,9 +10,9 @@
   },
   "type": "module",
   "devDependencies": {
-    "@types/node": "22.15.23",
+    "@types/node": "24.0.1",
     "http-server": "14.1.1",
-    "hyparquet": "1.14.0",
+    "hyparquet": "1.16.1",
     "hyparquet-compressors": "1.1.1"
   }
 }
