@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "all-versions": "node src/versions.js",
-    "playwright": "npx playwright test",
+    "current-version": "node src/index.js",
     "chart": "http-server -o"
   },
   "type": "module",
