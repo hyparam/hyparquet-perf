@@ -1,10 +1,88 @@
-{"name":"has title","version":"0.26.4","ms":574,"date":"2026-03-10T18:11:53.798Z"}
-{"name":"has cell content","version":"0.26.4","ms":21,"date":"2026-03-10T18:11:53.802Z"}
-{"name":"has title","version":"0.26.3","ms":565,"date":"2026-03-10T18:12:02.679Z"}
-{"name":"has cell content","version":"0.26.3","ms":21,"date":"2026-03-10T18:12:02.680Z"}
-{"name":"has title","version":"0.26.2","ms":562,"date":"2026-03-10T18:12:11.381Z"}
-{"name":"has cell content","version":"0.26.2","ms":21,"date":"2026-03-10T18:12:11.384Z"}
-{"name":"has title","version":"0.26.1","ms":563,"date":"2026-03-10T18:12:20.063Z"}
-{"name":"has cell content","version":"0.26.1","ms":21,"date":"2026-03-10T18:12:20.065Z"}
-{"name":"has title","version":"0.26.0","ms":470,"date":"2026-03-10T18:12:28.556Z"}
-{"name":"has cell content","version":"0.26.0","ms":23,"date":"2026-03-10T18:12:28.557Z"}
+{"name":"load first cell","version":"0.26.4","ms":117.5,"date":"2026-03-11T15:01:50.448Z"}
+{"name":"scroll by one row","version":"0.26.4","ms":44.5,"date":"2026-03-11T15:01:50.451Z"}
+{"name":"scroll by 10 rows","version":"0.26.4","ms":63,"date":"2026-03-11T15:01:50.452Z"}
+{"name":"sort","version":"0.26.4","ms":79,"date":"2026-03-11T15:01:50.452Z"}
+{"name":"load first cell","version":"0.26.3","ms":120.5,"date":"2026-03-11T15:02:03.353Z"}
+{"name":"scroll by one row","version":"0.26.3","ms":46,"date":"2026-03-11T15:02:03.354Z"}
+{"name":"scroll by 10 rows","version":"0.26.3","ms":64.5,"date":"2026-03-11T15:02:03.354Z"}
+{"name":"sort","version":"0.26.3","ms":79.5,"date":"2026-03-11T15:02:03.355Z"}
+{"name":"load first cell","version":"0.26.2","ms":115.5,"date":"2026-03-11T15:02:16.568Z"}
+{"name":"scroll by one row","version":"0.26.2","ms":43,"date":"2026-03-11T15:02:16.569Z"}
+{"name":"scroll by 10 rows","version":"0.26.2","ms":66,"date":"2026-03-11T15:02:16.569Z"}
+{"name":"sort","version":"0.26.2","ms":82,"date":"2026-03-11T15:02:16.570Z"}
+{"name":"load first cell","version":"0.26.1","ms":118,"date":"2026-03-11T15:02:29.496Z"}
+{"name":"scroll by one row","version":"0.26.1","ms":46,"date":"2026-03-11T15:02:29.500Z"}
+{"name":"scroll by 10 rows","version":"0.26.1","ms":65.5,"date":"2026-03-11T15:02:29.501Z"}
+{"name":"sort","version":"0.26.1","ms":79.5,"date":"2026-03-11T15:02:29.502Z"}
+{"name":"load first cell","version":"0.26.0","ms":84,"date":"2026-03-11T15:02:40.952Z"}
+{"name":"scroll by one row","version":"0.26.0","ms":36.5,"date":"2026-03-11T15:02:40.954Z"}
+{"name":"scroll by 10 rows","version":"0.26.0","ms":46.5,"date":"2026-03-11T15:02:40.954Z"}
+{"name":"sort","version":"0.26.0","ms":80,"date":"2026-03-11T15:02:40.955Z"}
+{"name":"load first cell","version":"0.25.3","ms":84,"date":"2026-03-11T15:02:52.461Z"}
+{"name":"scroll by one row","version":"0.25.3","ms":35.5,"date":"2026-03-11T15:02:52.462Z"}
+{"name":"scroll by 10 rows","version":"0.25.3","ms":47,"date":"2026-03-11T15:02:52.462Z"}
+{"name":"sort","version":"0.25.3","ms":69,"date":"2026-03-11T15:02:52.463Z"}
+{"name":"load first cell","version":"0.25.2","ms":81.5,"date":"2026-03-11T15:03:04.035Z"}
+{"name":"scroll by one row","version":"0.25.2","ms":35.5,"date":"2026-03-11T15:03:04.036Z"}
+{"name":"scroll by 10 rows","version":"0.25.2","ms":47.5,"date":"2026-03-11T15:03:04.036Z"}
+{"name":"sort","version":"0.25.2","ms":77,"date":"2026-03-11T15:03:04.036Z"}
+{"name":"load first cell","version":"0.25.1","ms":87,"date":"2026-03-11T15:03:15.866Z"}
+{"name":"scroll by one row","version":"0.25.1","ms":38.5,"date":"2026-03-11T15:03:15.868Z"}
+{"name":"scroll by 10 rows","version":"0.25.1","ms":51,"date":"2026-03-11T15:03:15.869Z"}
+{"name":"sort","version":"0.25.1","ms":80.5,"date":"2026-03-11T15:03:15.869Z"}
+{"name":"load first cell","version":"0.25.0","ms":64.5,"date":"2026-03-11T15:03:27.167Z"}
+{"name":"scroll by one row","version":"0.25.0","ms":33.5,"date":"2026-03-11T15:03:27.170Z"}
+{"name":"scroll by 10 rows","version":"0.25.0","ms":46.5,"date":"2026-03-11T15:03:27.171Z"}
+{"name":"sort","version":"0.25.0","ms":76,"date":"2026-03-11T15:03:27.172Z"}
+{"name":"load first cell","version":"0.24.1","ms":69,"date":"2026-03-11T15:03:38.389Z"}
+{"name":"scroll by one row","version":"0.24.1","ms":35,"date":"2026-03-11T15:03:38.390Z"}
+{"name":"scroll by 10 rows","version":"0.24.1","ms":48,"date":"2026-03-11T15:03:38.391Z"}
+{"name":"sort","version":"0.24.1","ms":52.5,"date":"2026-03-11T15:03:38.391Z"}
+{"name":"load first cell","version":"0.24.0","ms":67.5,"date":"2026-03-11T15:03:49.551Z"}
+{"name":"scroll by one row","version":"0.24.0","ms":34.5,"date":"2026-03-11T15:03:49.554Z"}
+{"name":"scroll by 10 rows","version":"0.24.0","ms":50.5,"date":"2026-03-11T15:03:49.555Z"}
+{"name":"sort","version":"0.24.0","ms":52,"date":"2026-03-11T15:03:49.556Z"}
+{"name":"load first cell","version":"0.23.0","ms":63,"date":"2026-03-11T15:04:00.730Z"}
+{"name":"scroll by one row","version":"0.23.0","ms":33.5,"date":"2026-03-11T15:04:00.731Z"}
+{"name":"scroll by 10 rows","version":"0.23.0","ms":47,"date":"2026-03-11T15:04:00.732Z"}
+{"name":"sort","version":"0.23.0","ms":79,"date":"2026-03-11T15:04:00.732Z"}
+{"name":"load first cell","version":"0.22.2","ms":64,"date":"2026-03-11T15:04:11.886Z"}
+{"name":"scroll by one row","version":"0.22.2","ms":33.5,"date":"2026-03-11T15:04:11.888Z"}
+{"name":"scroll by 10 rows","version":"0.22.2","ms":49,"date":"2026-03-11T15:04:11.889Z"}
+{"name":"sort","version":"0.22.2","ms":55,"date":"2026-03-11T15:04:11.890Z"}
+{"name":"load first cell","version":"0.22.1","ms":67,"date":"2026-03-11T15:04:23.166Z"}
+{"name":"scroll by one row","version":"0.22.1","ms":33.5,"date":"2026-03-11T15:04:23.170Z"}
+{"name":"scroll by 10 rows","version":"0.22.1","ms":46,"date":"2026-03-11T15:04:23.171Z"}
+{"name":"sort","version":"0.22.1","ms":54,"date":"2026-03-11T15:04:23.172Z"}
+{"name":"load first cell","version":"0.22.0","ms":65.5,"date":"2026-03-11T15:04:34.326Z"}
+{"name":"scroll by one row","version":"0.22.0","ms":33.5,"date":"2026-03-11T15:04:34.328Z"}
+{"name":"scroll by 10 rows","version":"0.22.0","ms":48,"date":"2026-03-11T15:04:34.329Z"}
+{"name":"sort","version":"0.22.0","ms":51,"date":"2026-03-11T15:04:34.329Z"}
+{"name":"load first cell","version":"0.21.1","ms":66,"date":"2026-03-11T15:04:45.393Z"}
+{"name":"scroll by one row","version":"0.21.1","ms":33.5,"date":"2026-03-11T15:04:45.394Z"}
+{"name":"scroll by 10 rows","version":"0.21.1","ms":48,"date":"2026-03-11T15:04:45.395Z"}
+{"name":"sort","version":"0.21.1","ms":51.5,"date":"2026-03-11T15:04:45.395Z"}
+{"name":"load first cell","version":"0.21.0","ms":66.5,"date":"2026-03-11T15:04:56.825Z"}
+{"name":"scroll by one row","version":"0.21.0","ms":33.5,"date":"2026-03-11T15:04:56.827Z"}
+{"name":"scroll by 10 rows","version":"0.21.0","ms":48.5,"date":"2026-03-11T15:04:56.828Z"}
+{"name":"sort","version":"0.21.0","ms":76,"date":"2026-03-11T15:04:56.829Z"}
+{"name":"load first cell","version":"0.20.4","ms":65.5,"date":"2026-03-11T15:05:08.022Z"}
+{"name":"scroll by one row","version":"0.20.4","ms":33.5,"date":"2026-03-11T15:05:08.023Z"}
+{"name":"scroll by 10 rows","version":"0.20.4","ms":48,"date":"2026-03-11T15:05:08.023Z"}
+{"name":"sort","version":"0.20.4","ms":53,"date":"2026-03-11T15:05:08.023Z"}
+{"name":"load first cell","version":"0.20.3","ms":81,"date":"2026-03-11T15:05:19.783Z"}
+{"name":"scroll by one row","version":"0.20.3","ms":34,"date":"2026-03-11T15:05:19.785Z"}
+{"name":"scroll by 10 rows","version":"0.20.3","ms":48.5,"date":"2026-03-11T15:05:19.786Z"}
+{"name":"sort","version":"0.20.3","ms":51.5,"date":"2026-03-11T15:05:19.786Z"}
+{"name":"load first cell","version":"0.20.2","ms":82.5,"date":"2026-03-11T15:05:31.106Z"}
+{"name":"scroll by one row","version":"0.20.2","ms":34,"date":"2026-03-11T15:05:31.107Z"}
+{"name":"scroll by 10 rows","version":"0.20.2","ms":49.5,"date":"2026-03-11T15:05:31.108Z"}
+{"name":"sort","version":"0.20.2","ms":51,"date":"2026-03-11T15:05:31.109Z"}
+{"name":"load first cell","version":"0.20.1","ms":64,"date":"2026-03-11T15:05:42.371Z"}
+{"name":"scroll by one row","version":"0.20.1","ms":33,"date":"2026-03-11T15:05:42.373Z"}
+{"name":"scroll by 10 rows","version":"0.20.1","ms":45.5,"date":"2026-03-11T15:05:42.373Z"}
+{"name":"sort","version":"0.20.1","ms":54,"date":"2026-03-11T15:05:42.374Z"}
+{"name":"load first cell","version":"0.20.0","ms":64.5,"date":"2026-03-11T15:05:54.040Z"}
+{"name":"scroll by one row","version":"0.20.0","ms":36,"date":"2026-03-11T15:05:54.042Z"}
+{"name":"scroll by 10 rows","version":"0.20.0","ms":47,"date":"2026-03-11T15:05:54.042Z"}
+{"name":"sort","version":"0.20.0","ms":52.5,"date":"2026-03-11T15:05:54.043Z"}
